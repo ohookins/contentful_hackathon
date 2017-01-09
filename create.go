@@ -48,9 +48,12 @@ func transformEntry(incomingEntry []byte) *bytes.Buffer {
 	json.Unmarshal(incomingEntry, &newEntry)
 	entry := &articleEntry{
 		Fields: articleFields{
-			Title:    nonLocalizedStringEntry{newEntry.Title},
-			URL:      nonLocalizedStringEntry{newEntry.URL},
-			Abstract: nonLocalizedStringEntry{newEntry.Abstract},
+			Title:      nonLocalizedStringEntry{newEntry.Title},
+			URL:        nonLocalizedStringEntry{newEntry.URL},
+			Abstract:   nonLocalizedStringEntry{newEntry.Abstract},
+			ImageURL:   nonLocalizedStringEntry{newEntry.ImageURL},
+			SourceName: nonLocalizedStringEntry{newEntry.SourceName},
+			SourceURL:  nonLocalizedStringEntry{newEntry.SourceURL},
 		},
 	}
 	jsonEntry, _ := json.Marshal(entry)

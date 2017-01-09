@@ -21,7 +21,7 @@
   recently created ID.
 * Is it possible to set the content type in an entry query via a header?!?
   Inconsistent use of headers and query parameters...
-
+* Can't see the short field names in the Content Type screen of the UI.
 
 ## Running
 You need to set these three environment variables:

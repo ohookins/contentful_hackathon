@@ -24,9 +24,12 @@ func summaryHandler(w http.ResponseWriter, r *http.Request) {
 		outputEntries = append(
 			outputEntries,
 			clientEntry{
-				Title:    value.Fields.Title,
-				URL:      value.Fields.URL,
-				Abstract: value.Fields.Abstract,
+				Title:      value.Fields.Title,
+				URL:        value.Fields.URL,
+				Abstract:   value.Fields.Abstract,
+				ImageURL:   value.Fields.ImageURL,
+				SourceName: value.Fields.SourceName,
+				SourceURL:  value.Fields.SourceURL,
 			},
 		)
 	}
