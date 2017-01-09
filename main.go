@@ -3,12 +3,12 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"flag"
 	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	cf "github.com/Khaledgarbaya/contentful_go"
 	"github.com/gorilla/mux"
@@ -31,22 +31,17 @@ const (
 )
 
 var (
-	cdaToken = flag.String("cda-token", "", "Token or Access Key for the Content Delivery API")
-	cmaToken = flag.String("cma-token", "", "Token or Access Key for the Content Management API")
-	spaceID  = flag.String("space-id", "", "Space ID on Contentful")
+	cdaToken = os.Getenv("CFHACK_CDA_TOKEN")
+	cmaToken = os.Getenv("CFHACK_CMA_TOKEN")
+	spaceID  = os.Getenv("CFHACK_SPACE_ID")
 
 	contentful cf.Contentful
 	tmpl       *template.Template
 )
 
-func init() {
-	flag.Parse()
-	// TODO: Check that each flag is set
-}
-
 func main() {
 	// Set up the Contentful client with the given space
-	contentful = cf.New(*spaceID, *cdaToken)
+	contentful = cf.New(spaceID, cdaToken)
 
 	// Parse the template
 	tmpl, _ = template.New("body").Parse(bodyTemplate)
@@ -88,8 +83,8 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("%s\n", buf)
 
 	// Create the new entry on the CMA
-	req, _ := http.NewRequest("POST", fmt.Sprintf(entryCreationFmt, *spaceID), buf)
-	req.Header.Add("Authorization", "Bearer "+*cmaToken)
+	req, _ := http.NewRequest("POST", fmt.Sprintf(entryCreationFmt, spaceID), buf)
+	req.Header.Add("Authorization", "Bearer "+cmaToken)
 	req.Header.Add("Content-Type", "application/vnd.contentful.management.v1+json")
 	req.Header.Add("X-Contentful-Content-Type", "article")
 

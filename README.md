@@ -13,3 +13,11 @@
   to written code.
 * You can't easily find the ID of the Content Type in the Web UI.
 * "fields" structure in CMA entries is case sensitive :(
+
+## Running
+You need to set these three environment variables:
+```
+CFHACK_CMA_TOKEN
+CFHACK_CDA_TOKEN
+CFHACK_SPACE_ID
+```
