@@ -13,6 +13,11 @@
   to written code.
 * You can't easily find the ID of the Content Type in the Web UI.
 * "fields" structure in CMA entries is case sensitive :(
+* To publish an entry you call the "published" endpoint which doesn't make much
+  sense.
+* You can't create and publish an entry in the same API call :(
+* You MUST supply a version ID when publishing, it won't just be the most
+  recently created ID.
 
 ## Running
 You need to set these three environment variables:

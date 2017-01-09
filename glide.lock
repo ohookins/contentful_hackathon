@@ -1,5 +1,5 @@
-hash: e12d876024339640a3752bf717d69c67615faea3ab429ed65023aee20059f21b
-updated: 2017-01-09T13:49:49.606897774+01:00
+hash: 7329f890ccae538a02e3ca9a74d47dce0e6fe38e27eef282063ad6236f46c477
+updated: 2017-01-09T15:15:04.432642082+01:00
 imports:
 - name: github.com/gorilla/context
   version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
@@ -9,4 +9,6 @@ imports:
   version: 3c0736ca144a88b8ee2081bd780fe5153c475124
   subpackages:
   - entities
+- name: github.com/streadway/handy
+  version: f450267a206e480d863d2a92846a40f6e2896b2a
 testImports: []

@@ -21,3 +21,12 @@ type articleFields struct {
 type nonLocalizedStringEntry struct {
 	Data string `json:"en-US,omitempty"`
 }
+
+type createEntryResponse struct {
+	Sys sys
+}
+
+type sys struct {
+	ID      string
+	Version uint
+}
