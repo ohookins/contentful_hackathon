@@ -20,4 +20,5 @@ You need to set these three environment variables:
 CFHACK_CMA_TOKEN
 CFHACK_CDA_TOKEN
 CFHACK_SPACE_ID
+PORT
 ```

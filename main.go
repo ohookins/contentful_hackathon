@@ -15,7 +15,6 @@ import (
 )
 
 const (
-	bindPort         = 8080
 	entryCreationFmt = "https://api.contentful.com/spaces/%s/entries"
 	bodyTemplate     = `
 <html>
@@ -34,6 +33,7 @@ var (
 	cdaToken = os.Getenv("CFHACK_CDA_TOKEN")
 	cmaToken = os.Getenv("CFHACK_CMA_TOKEN")
 	spaceID  = os.Getenv("CFHACK_SPACE_ID")
+	bindPort = os.Getenv("PORT")
 
 	contentful cf.Contentful
 	tmpl       *template.Template
@@ -53,7 +53,7 @@ func main() {
 	http.Handle("/", r)
 
 	// Set up the webserver
-	listenPort := fmt.Sprintf(":%d", bindPort)
+	listenPort := fmt.Sprintf(":%s", bindPort)
 	log.Println("Now listening on", listenPort)
 	log.Fatal(http.ListenAndServe(listenPort, nil))
 }
