@@ -7,3 +7,9 @@
 * Even if it weren't, the content structure is complex enough to make it a
   challenge to generate something very simple with existing content. Too many
   additional metadata fields compared to how much content you have.
+* Go SDK currently lacks any CMA methods :(
+* CMA docs don't make it easy to understand how to construct a request in code.
+  It is _kinda_ human understandable but the way it is written doesn't map well
+  to written code.
+* You can't easily find the ID of the Content Type in the Web UI.
+* "fields" structure in CMA entries is case sensitive :(
