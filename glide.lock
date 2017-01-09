@@ -1,14 +1,12 @@
-hash: 7329f890ccae538a02e3ca9a74d47dce0e6fe38e27eef282063ad6236f46c477
-updated: 2017-01-09T15:15:04.432642082+01:00
+hash: 78ce19d2cdeaa28f75687e953ad843deda07109bcaa63bb526cd203d3b2e0310
+updated: 2017-01-09T16:33:04.814817807+01:00
 imports:
 - name: github.com/gorilla/context
   version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
 - name: github.com/gorilla/mux
   version: 0eeaf8392f5b04950925b8a69fe70f110fa7cbfc
-- name: github.com/Khaledgarbaya/contentful_go
-  version: 3c0736ca144a88b8ee2081bd780fe5153c475124
-  subpackages:
-  - entities
 - name: github.com/streadway/handy
   version: f450267a206e480d863d2a92846a40f6e2896b2a
+  subpackages:
+  - report
 testImports: []

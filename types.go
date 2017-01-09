@@ -2,9 +2,9 @@ package main
 
 // Content coming in from client to create a new entry
 type clientEntry struct {
-	Title    string `json:",omitempty"`
-	URL      string `json:",omitempty"`
-	Abstract string `json:",omitempty"`
+	Title    string `json:"title,omitempty"`
+	URL      string `json:"url,omitempty"`
+	Abstract string `json:"abstract,omitempty"`
 }
 
 // Much like the above, but formed in a way that the CMA expects.
@@ -29,4 +29,12 @@ type createEntryResponse struct {
 type sys struct {
 	ID      string
 	Version uint
+}
+
+type deliveryResponse struct {
+	Items []deliveryItem
+}
+
+type deliveryItem struct {
+	Fields clientEntry
 }

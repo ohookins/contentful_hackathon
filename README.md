@@ -8,6 +8,7 @@
   challenge to generate something very simple with existing content. Too many
   additional metadata fields compared to how much content you have.
 * Go SDK currently lacks any CMA methods :(
+  * Actually the SDK is harder to use than raw Go and the APIs, currently.
 * CMA docs don't make it easy to understand how to construct a request in code.
   It is _kinda_ human understandable but the way it is written doesn't map well
   to written code.
@@ -18,6 +19,9 @@
 * You can't create and publish an entry in the same API call :(
 * You MUST supply a version ID when publishing, it won't just be the most
   recently created ID.
+* Is it possible to set the content type in an entry query via a header?!?
+  Inconsistent use of headers and query parameters...
+
 
 ## Running
 You need to set these three environment variables:
